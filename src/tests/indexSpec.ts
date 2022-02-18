@@ -9,18 +9,17 @@ import supertest from 'supertest';
 // });
 //test EndPoints
 const request = supertest(app);
+const request2 = supertest(router);
 describe('Test endpoint responses', () => {
     it('gets the api endpoint', async () => {
         const response = await request.get('/api');
         expect(response.status).toBe(200);
        
-    }
+    })
+    it('gets the api endpoint', async () => {
+      const response = await request2.get('/image-disply');
+      expect(response.status).toBe(200);
+     
+  }
 )});
-const request2 = supertest(router);
-xdescribe('Test endpoint router responses', () => {
-    it('gets the api endpoint', async (done) => {
-        const response = await request2.get('/api');
-        expect(response.status).toBe(200);
-        done();
-    }
-)});
+
