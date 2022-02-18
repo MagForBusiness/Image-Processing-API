@@ -64,7 +64,7 @@ describe('Test endpoint responses', function () {
     }); });
 });
 var request2 = (0, supertest_1.default)(index_2.default);
-xdescribe('Test endpoint responses', function () {
+xdescribe('Test endpoint router responses', function () {
     it('gets the api endpoint', function (done) { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {

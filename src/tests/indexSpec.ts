@@ -10,10 +10,10 @@ import supertest from 'supertest';
 //test EndPoints
 const request = supertest(app);
 describe('Test endpoint responses', () => {
-    it('gets the api endpoint', async (done) => {
+    it('gets the api endpoint', async () => {
         const response = await request.get('/');
         expect(response.status).toBe(200);
-        done();
+       
     }
 )});
 const request2 = supertest(router);
