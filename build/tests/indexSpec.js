@@ -48,6 +48,7 @@ var supertest_1 = __importDefault(require("supertest"));
 // });
 //test EndPoints
 var request = (0, supertest_1.default)(index_1.default);
+var request2 = (0, supertest_1.default)(index_2.default);
 describe('Test endpoint responses', function () {
     it('gets the api endpoint', function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
@@ -61,18 +62,14 @@ describe('Test endpoint responses', function () {
             }
         });
     }); });
-});
-var request2 = (0, supertest_1.default)(index_2.default);
-xdescribe('Test endpoint router responses', function () {
-    it('gets the api endpoint', function (done) { return __awaiter(void 0, void 0, void 0, function () {
+    it('gets the api endpoint', function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request2.get('/api')];
+                case 0: return [4 /*yield*/, request2.get('/image-disply')];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(200);
-                    done();
                     return [2 /*return*/];
             }
         });
