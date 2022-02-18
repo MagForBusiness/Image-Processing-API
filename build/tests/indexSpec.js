@@ -66,7 +66,7 @@ describe('Test endpoint responses', function () {
         var response2;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request2.get('/')];
+                case 0: return [4 /*yield*/, request2.get('/api/image-disply')];
                 case 1:
                     response2 = _a.sent();
                     expect(response2.status).toBe(200);
