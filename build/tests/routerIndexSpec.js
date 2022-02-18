@@ -39,16 +39,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var index_1 = __importDefault(require("../routes/index"));
+var index_1 = __importDefault(require("../index"));
 var supertest_1 = __importDefault(require("supertest"));
 //test EndPoints
 var request = (0, supertest_1.default)(index_1.default);
-xdescribe('Test endpoint Routers responses', function () {
+describe('Test endpoint Routers responses', function () {
     it('gets the api (image-disply) endpoint', function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get('/')];
+                case 0: return [4 /*yield*/, request.get('/api/image-disply')];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(200);
