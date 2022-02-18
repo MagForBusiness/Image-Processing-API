@@ -53,7 +53,7 @@ describe('Test endpoint responses', function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get('/api')];
+                case 0: return [4 /*yield*/, request.get('/')];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(200);
@@ -64,7 +64,7 @@ describe('Test endpoint responses', function () {
     }); });
 });
 var request2 = (0, supertest_1.default)(index_2.default);
-describe('Test endpoint responses', function () {
+xdescribe('Test endpoint responses', function () {
     it('gets the api endpoint', function (done) { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
