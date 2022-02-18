@@ -4,12 +4,12 @@ import supertest from 'supertest';
 
 
 //test EndPoints
-const request2 = supertest(router);
+const request = supertest(router);
 describe('Test endpoint responses', () => {
    
     it('gets the api (image-disply) endpoint', async () => {
-      const response2 = await request2.get('/api/image-disply');
-      expect(response2.status).toBe(200);
+      const response = await request.get('/');
+      expect(response.status).toBe(200);
      
   }
 )});
