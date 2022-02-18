@@ -7,7 +7,7 @@ const logger = (
   next: Function
 ): void => {
   const active_url = req.baseUrl;
-  console.log(`${active_url} Was visited`); /***can use time now */
+  console.log(`${active_url} Was visited at ${Date.now()}`); /***can use time now */
   next();
 };
 export default logger;
