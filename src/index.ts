@@ -2,7 +2,7 @@ import express from 'express';
 import router from './routes/index';
 
 
-//Create your application object with express()
+//Create  application object with express()
 
 const app = express();
 
