@@ -1,4 +1,4 @@
-import myFunc from '../index';
+// import myFunc from '../index';
 import app from '../index';
 import supertest from 'supertest';
 
