@@ -1,5 +1,6 @@
 // import myFunc from '../index';
 import app from '../index';
+import router from '../routes/index';
 import supertest from 'supertest';
 
 
@@ -11,6 +12,14 @@ const request = supertest(app);
 describe('Test endpoint responses', () => {
     it('gets the api endpoint', async (done) => {
         const response = await request.get('/api');
+        expect(response.status).toBe(200);
+        done();
+    }
+)});
+const request2 = supertest(router);
+describe('Test endpoint responses', () => {
+    it('gets the api endpoint', async (done) => {
+        const response = await request2.get('/api');
         expect(response.status).toBe(200);
         done();
     }
