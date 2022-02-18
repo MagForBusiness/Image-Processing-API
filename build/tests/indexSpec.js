@@ -41,6 +41,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 // import myFunc from '../index';
 var index_1 = __importDefault(require("../index"));
+var index_2 = __importDefault(require("../routes/index"));
 var supertest_1 = __importDefault(require("supertest"));
 // it('expect myFunc(5) to equal 25', () => {
 //   expect(myFunc(5)).toEqual(25);
@@ -53,6 +54,22 @@ describe('Test endpoint responses', function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, request.get('/api')];
+                case 1:
+                    response = _a.sent();
+                    expect(response.status).toBe(200);
+                    done();
+                    return [2 /*return*/];
+            }
+        });
+    }); });
+});
+var request2 = (0, supertest_1.default)(index_2.default);
+describe('Test endpoint responses', function () {
+    it('gets the api endpoint', function (done) { return __awaiter(void 0, void 0, void 0, function () {
+        var response;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, request2.get('/api')];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(200);
