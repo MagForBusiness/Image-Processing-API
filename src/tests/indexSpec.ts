@@ -16,10 +16,10 @@ describe('Test endpoint responses', () => {
         expect(response.status).toBe(200);
        
     })
-    it('gets the api endpoint', async () => {
+    it('gets the api (image-disply) endpoint', async (done) => {
       const response2 = await request2.get('/image-disply');
       expect(response2.status).toBe(200);
-     
+     done();
   }
 )});
 

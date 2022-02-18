@@ -63,13 +63,13 @@ describe('Test endpoint responses', function () {
         });
     }); });
     it('gets the api endpoint', function () { return __awaiter(void 0, void 0, void 0, function () {
-        var response;
+        var response2;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, request2.get('/image-disply')];
                 case 1:
-                    response = _a.sent();
-                    expect(response.status).toBe(200);
+                    response2 = _a.sent();
+                    expect(response2.status).toBe(200);
                     return [2 /*return*/];
             }
         });
