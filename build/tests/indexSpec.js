@@ -39,13 +39,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var express_1 = __importDefault(require("express"));
 var index_1 = __importDefault(require("../index"));
-var index_2 = __importDefault(require("../index"));
 var supertest_1 = __importDefault(require("supertest"));
+var app = (0, express_1.default)();
 it('expect myFunc(5) to equal 25', function () {
     expect((0, index_1.default)(5)).toEqual(25);
 });
-var request = (0, supertest_1.default)(index_2.default);
+var request = (0, supertest_1.default)(app);
 describe('Test endpoint responses', function () {
     it('gets the api endpoint', function (done) { return __awaiter(void 0, void 0, void 0, function () {
         var response;
