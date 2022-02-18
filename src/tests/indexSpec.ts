@@ -17,7 +17,7 @@ describe('Test endpoint responses', () => {
        
     })
     it('gets the api (image-disply) endpoint', async () => {
-      const response2 = await request2.get('/image-disply');
+      const response2 = await request2.get('/api/image-disply');
       expect(response2.status).toBe(200);
      
   }

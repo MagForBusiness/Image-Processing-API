@@ -62,15 +62,14 @@ describe('Test endpoint responses', function () {
             }
         });
     }); });
-    it('gets the api (image-disply) endpoint', function (done) { return __awaiter(void 0, void 0, void 0, function () {
+    it('gets the api (image-disply) endpoint', function () { return __awaiter(void 0, void 0, void 0, function () {
         var response2;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request2.get('/image-disply')];
+                case 0: return [4 /*yield*/, request2.get('/')];
                 case 1:
                     response2 = _a.sent();
                     expect(response2.status).toBe(200);
-                    done();
                     return [2 /*return*/];
             }
         });
