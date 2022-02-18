@@ -41,14 +41,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 // import myFunc from '../index';
 var index_1 = __importDefault(require("../index"));
-var index_2 = __importDefault(require("../routes/index"));
 var supertest_1 = __importDefault(require("supertest"));
 // it('expect myFunc(5) to equal 25', () => {
 //   expect(myFunc(5)).toEqual(25);
 // });
 //test EndPoints
 var request = (0, supertest_1.default)(index_1.default);
-var request2 = (0, supertest_1.default)(index_2.default);
 describe('Test endpoint responses', function () {
     it('gets the api endpoint', function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
@@ -58,18 +56,6 @@ describe('Test endpoint responses', function () {
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(200);
-                    return [2 /*return*/];
-            }
-        });
-    }); });
-    it('gets the api (image-disply) endpoint', function () { return __awaiter(void 0, void 0, void 0, function () {
-        var response2;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, request2.get('/api/image-disply')];
-                case 1:
-                    response2 = _a.sent();
-                    expect(response2.status).toBe(200);
                     return [2 /*return*/];
             }
         });
