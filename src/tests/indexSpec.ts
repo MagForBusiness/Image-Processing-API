@@ -1,4 +1,3 @@
-import express from 'express';
 import myFunc from '../index';
 import app from '../index';
 import supertest from 'supertest';

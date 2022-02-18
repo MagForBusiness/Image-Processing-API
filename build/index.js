@@ -19,3 +19,4 @@ var myFunc = function (num) {
     return num * num;
 };
 exports.default = myFunc;
+exports.default = app;
