@@ -8,11 +8,11 @@ import supertest from 'supertest';
 // });
 //test EndPoints
 const request = supertest(app);
-describe('Test endpoint Main root responses', () => {
+describe('Test endpoint Main root responses', (done) => {
     it('gets the api endpoint', async () => {
         const response = await request.get('/api');
         expect(response.status).toBe(200);
-       
+       done()
     })
     
 });
