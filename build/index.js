@@ -4,18 +4,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
-//Create your application object with express()
+var index_1 = __importDefault(require("./routes/index"));
+//Create  application object with express()
 var app = (0, express_1.default)();
 //Set a port
 var port = 3000;
 //Add an API endpoint to get a route, then send a response to the browser
-app.get('/api', function (req, res) {
-    res.send('Hello, world!');
-});
+app.use('/api', index_1.default);
 app.listen(port, function () {
     console.log("server started at localhost:".concat(port));
 });
-console.log('wellcome');
+// console.log('wellcome');
 var myFunc = function (num) {
     return num * num;
 };

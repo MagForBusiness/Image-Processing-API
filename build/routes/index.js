@@ -4,19 +4,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
-//Create your application object with express()
-var app = (0, express_1.default)();
-//Set a port
-var port = 3000;
-//Add an API endpoint to get a route, then send a response to the browser
-app.get('/src', function (req, res) {
-    res.send('Hello, world!');
+var displyimage_1 = __importDefault(require("./api/displyimage"));
+// import rout2 from './api/rout2';
+var router = express_1.default.Router();
+router.use('/image-disply', displyimage_1.default);
+// router.use('/rout2', rout2);
+router.get('/', function (req, res) {
+    res.send('router Connect!');
 });
-app.listen(port, function () {
-    console.log("server started at localhost:".concat(port));
-});
-console.log('wellcome');
-var myFunc = function (num) {
-    return num * num;
-};
-exports.default = myFunc;
+exports.default = router;
