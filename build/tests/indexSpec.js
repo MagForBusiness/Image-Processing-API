@@ -62,7 +62,7 @@ describe('Test endpoint responses', function () {
             }
         });
     }); });
-    it('gets the api endpoint', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it('gets the api (image-disply) endpoint', function (done) { return __awaiter(void 0, void 0, void 0, function () {
         var response2;
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -70,6 +70,7 @@ describe('Test endpoint responses', function () {
                 case 1:
                     response2 = _a.sent();
                     expect(response2.status).toBe(200);
+                    done();
                     return [2 /*return*/];
             }
         });
