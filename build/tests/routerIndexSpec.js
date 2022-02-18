@@ -43,7 +43,7 @@ var index_1 = __importDefault(require("../routes/index"));
 var supertest_1 = __importDefault(require("supertest"));
 //test EndPoints
 var request = (0, supertest_1.default)(index_1.default);
-describe('Test endpoint responses', function () {
+xdescribe('Test endpoint Routers responses', function () {
     it('gets the api (image-disply) endpoint', function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {

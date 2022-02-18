@@ -1,14 +1,14 @@
-import router from '../routes/index';
+import app from '../index';
 import supertest from 'supertest';
 
 
 
 //test EndPoints
-const request = supertest(router);
-xdescribe('Test endpoint Routers responses', () => {
+const request = supertest(app);
+describe('Test endpoint Routers responses', () => {
    
     it('gets the api (image-disply) endpoint', async () => {
-      const response = await request.get('/');
+      const response = await request.get('/api/image-disply');
       expect(response.status).toBe(200);
      
   }
