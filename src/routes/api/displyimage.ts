@@ -18,7 +18,7 @@ const convertimage =async ()=> {
         height: 200
       })
       .toFormat("jpeg", { mozjpeg: true })
-      .toFile("../assets/full/icelandwaterfall-compressd.jpg");
+      .toFile("../assets/thumb/icelandwaterfall-compressd.jpg");
   } catch (error) {
     console.log(error);
   }
