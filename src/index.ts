@@ -5,12 +5,13 @@ import router from './routes/RouterIndex';
 
 const app = express();
 
+app.use(express.static('assets'));
 //Set a port
 
 const port = 3000;
 //Add an API endpoint to get a route, then send a response to the browser
 app.use('/api', router);
-app.use(express.static('assets'));
+
 app.listen(port, () => {
   console.log(`server started at localhost:${port}`);
 });
