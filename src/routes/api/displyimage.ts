@@ -12,6 +12,14 @@ image_disply.get('/', logger, (req, res) => {
  const height:number = Number(req.query.height);
   
     sharp(`assets/full/${filename}.jpg`).resize(width, height).toFile(`assets/thumb/${filename}-resize.jpg`);
+    //disply image in browser
+    // var myloc = new Image();  
+    // myloc.useMap = "image.jpg";  
+    // var img = document.createElement('img')  
+    // img.setAttribute('src', myloc.useMap);  
+    // img.setAttribute('style', "height:149px;width:280px;");  
+    // document.body.appendChild(img);  
+
     res.send({
     'filename': filename,
     'width': width,
