@@ -14,31 +14,12 @@ image_disply.get('/', logger, (req, res) => {
   sharp(`assets/full/${filename}.jpg`)
     .resize(width, height)
     .toFile(`assets/thumb/${filename}-resize.jpg`);
-  //disply image in browser
-  // var myloc = new Image();
-  // myloc.useMap = "image.jpg";
-  var img = document.createElement('img');
-  img.setAttribute('src', 'assets\thumbicelandwaterfall-resize.jpg');
-  img.setAttribute('style', 'height:149px;width:280px;');
-  document.body.appendChild(img);
-
-  res.send({
-    filename: filename,
-    width: width,
-    height: height,
-  });
-});
-
-// convert image and display it in browser (from folder full) and make anew size image ( in folder thumb)
-// const convertimage =async ()=> {
-//   try {
-//     sharp(`assets/full/${filename}.jpg`)
-//       .resize(300, 300)
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
-// convertimage();
-//display coverted image
-
+    // res.send(express.static('/assets/thumb'))
+    res.sendFile(__dirname + '/index.html');
+    // res.send({
+    // filename: filename,
+    // width: width,
+    // height: height
+    //  });
+    });
 export default image_disply;
