@@ -1,31 +1,33 @@
 import express from 'express';
 import logger from '../../utilites/logger';
-import sharp from "sharp";
+import sharp from 'sharp';
 
-// set up route 
+// set up route
 const image_disply = express.Router();
 image_disply.get('/', logger, (req, res) => {
-  //get URL Parameters 
+  //get URL Parameters
   //http://localhost:3000/api/image-disply?filename=icelandwaterfall&width=200&height=300
- const filename = req.query.filename;
- const width:number  = Number(req.query.width);
- const height:number = Number(req.query.height);
-  
-    sharp(`assets/full/${filename}.jpg`).resize(width, height).toFile(`assets/thumb/${filename}-resize.jpg`);
-    //disply image in browser
-    // var myloc = new Image();  
-    // myloc.useMap = "image.jpg";  
-    // var img = document.createElement('img')  
-    // img.setAttribute('src', myloc.useMap);  
-    // img.setAttribute('style', "height:149px;width:280px;");  
-    // document.body.appendChild(img);  
+  const filename = req.query.filename;
+  const width: number = Number(req.query.width);
+  const height: number = Number(req.query.height);
 
-    res.send({
-    'filename': filename,
-    'width': width,
-    'height': height
-  })
+  sharp(`assets/full/${filename}.jpg`)
+    .resize(width, height)
+    .toFile(`assets/thumb/${filename}-resize.jpg`);
+  //disply image in browser
+  // var myloc = new Image();
+  // myloc.useMap = "image.jpg";
+  var img = document.createElement('img');
+  img.setAttribute('src', 'assets\thumbicelandwaterfall-resize.jpg');
+  img.setAttribute('style', 'height:149px;width:280px;');
+  document.body.appendChild(img);
+
+  res.send({
+    filename: filename,
+    width: width,
+    height: height,
   });
+});
 
 // convert image and display it in browser (from folder full) and make anew size image ( in folder thumb)
 // const convertimage =async ()=> {
@@ -37,6 +39,6 @@ image_disply.get('/', logger, (req, res) => {
 //   }
 // }
 // convertimage();
-//display coverted image 
+//display coverted image
 
 export default image_disply;

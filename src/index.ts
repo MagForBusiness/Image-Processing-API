@@ -15,7 +15,6 @@ app.listen(port, () => {
   console.log(`server started at localhost:${port}`);
 });
 
-
 // // console.log('wellcome');
 // const myFunc = (num: number): number => {
 //     return num * num;
