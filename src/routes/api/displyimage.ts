@@ -1,6 +1,7 @@
 import express from 'express';
 import logger from '../../utilites/logger';
 import sharp from 'sharp';
+import path from 'path';
 
 // set up route
 const image_disply = express.Router();
@@ -15,7 +16,8 @@ image_disply.get('/', logger, (req, res) => {
     .resize(width, height)
     .toFile(`assets/thumb/${filename}-resize.jpg`);
     // res.send(express.static('/assets/thumb'))
-    res.sendFile(__dirname + '/index.html');
+    // res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname +'../source/image/icelandwaterfall-resize.jpg');
     // res.send({
     // filename: filename,
     // width: width,
