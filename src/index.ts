@@ -1,11 +1,12 @@
 import express from 'express';
 import router from './routes/RouterIndex';
-
+import path from 'path';
 //Create  application object with express()
 
 const app = express();
 
-app.use(express.static('assets'));
+app.use(express.static(__dirname+'public'));
+
 //Set a port
 
 const port = 3000;
