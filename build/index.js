@@ -14,9 +14,4 @@ app.use('/api', RouterIndex_1.default);
 app.listen(port, function () {
     console.log("server started at localhost:".concat(port));
 });
-// // console.log('wellcome');
-// const myFunc = (num: number): number => {
-//     return num * num;
-//   };
-//   export default myFunc;
 exports.default = app;
