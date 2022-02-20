@@ -42,9 +42,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // import myFunc from '../index';
 var index_1 = __importDefault(require("../index"));
 var supertest_1 = __importDefault(require("supertest"));
-// it('expect myFunc(5) to equal 25', () => {
-//   expect(myFunc(5)).toEqual(25);
-// });
 //test EndPoints
 var request = (0, supertest_1.default)(index_1.default);
 describe('Test endpoint Main root responses', function () {

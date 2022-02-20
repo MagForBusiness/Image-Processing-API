@@ -1,12 +1,11 @@
-// import ResizImage from '../routes/api/displyimage';
+import { ResizImage } from '../routes/api/displyimage';
 
-// //test Resize Prosses
+//test Resize Prosses
 
-// describe('Test The Resize Process', () => {
-//   it('get the name of file = icelandwaterfall after process with Sharp ',
-//     () => {
-   
-//    // expect(ResizImage('icelandwaterfall',500,300)).toThrowError('error');
-    
-//   });
-// });
+describe('Test The Resize Process', () => {
+  it('get the name of file = icelandwaterfall after process with Sharp will be icelandwaterfall-resize.jpg  ', () => {
+    expect(ResizImage('icelandwaterfall', 500, 300)).toBe(
+      'icelandwaterfall-resize.jpg'
+    );
+  });
+});

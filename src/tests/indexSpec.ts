@@ -2,7 +2,6 @@
 import app from '../index';
 import supertest from 'supertest';
 
-
 //test EndPoints
 const request = supertest(app);
 describe('Test endpoint Main root responses', () => {
