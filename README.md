@@ -11,6 +11,9 @@
 
 How to use :
 ===========
+1- start server npm run start
+2-in browser 
+
 http://localhost:3000/api/image-disply?filename=icelandwaterfall&width=200&height=300
 
-Change the width and height and  Run 
+Change the width and height and  Run page .....
