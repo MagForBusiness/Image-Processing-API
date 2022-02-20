@@ -11,17 +11,11 @@ image_disply.get('/', logger, (req, res) => {
   const filename = req.query.filename;
   const width: number = Number(req.query.width);
   const height: number = Number(req.query.height);
-  
+  //convert prosses
   sharp(`assets/full/${filename}.jpg`)
     .resize(width, height)
     .toFile(`assets/thumb/${filename}-resize.jpg`);
-    // res.send(express.static('/assets/thumb'))
-    // res.sendFile(__dirname + '/index.html');
-    res.sendFile(__dirname +'../source/image/icelandwaterfall-resize.jpg');
-    // res.send({
-    // filename: filename,
-    // width: width,
-    // height: height
-    //  });
+  //display in browser
+    res.sendFile(path.resolve()+`/assets/thumb/${filename}-resize.jpg`);
     });
 export default image_disply;
