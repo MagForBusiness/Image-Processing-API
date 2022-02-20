@@ -11,7 +11,7 @@ function ResizImage(filename : string,width: number,height: number) {
     .resize(width, height)
     .toFile(`assets/thumb/${filename}-resize.jpg`);
     console.log(`Image Resize ${filename}-resize.jpg`);
-    return filename;
+    
   } catch(error){
     console.log('error');
   }
@@ -39,5 +39,4 @@ image_disply.get('/', logger, (req, res) => {
     };
   });
 export default image_disply;
-
 

@@ -12,7 +12,7 @@
 How to use :
 ===========
 1- start server npm run start
-2-the source of image put in assets ==> Full
+2-the source of image put in folder assets ==> Full
 3-in browser 
 
 http://localhost:3000/api/image-disply?filename=icelandwaterfall&width=200&height=300
