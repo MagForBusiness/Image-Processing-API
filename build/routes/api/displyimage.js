@@ -28,8 +28,15 @@ image_disply.get('/', logger_1.default, function (req, res) {
     var filename = String(req.query.filename);
     var width = Number(req.query.width);
     var height = Number(req.query.height);
-    ResizImage(filename, width, height);
-    //display in browser
-    res.sendFile(path_1.default.resolve() + "/assets/thumb/".concat(filename, "-resize.jpg"));
+    //test User Input 
+    if (isNaN(width)) {
+        res.send("Enter The Parameters As http://localhost:3000/api/image-disply?filename=icelandwaterfall&width=200&height=300");
+    }
+    else {
+        ResizImage(filename, width, height);
+        //display in browser
+        res.sendFile(path_1.default.resolve() + "/assets/thumb/".concat(filename, "-resize.jpg"));
+    }
+    ;
 });
 exports.default = image_disply;
