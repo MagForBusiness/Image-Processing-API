@@ -55,15 +55,13 @@ function ResizImage(filename, width, height) {
                     return [4 /*yield*/, (0, sharp_1.default)("assets/thumb/".concat(filename, "-resize.jpg")).metadata()];
                 case 2:
                     metadata = _a.sent();
-                    console.log(metadata);
+                    // console.log(metadata);
                     return [2 /*return*/, metadata.width];
                 case 3:
                     error_1 = _a.sent();
                     console.log(error_1);
                     return [3 /*break*/, 4];
-                case 4:
-                    ;
-                    return [2 /*return*/];
+                case 4: return [2 /*return*/];
             }
         });
     });

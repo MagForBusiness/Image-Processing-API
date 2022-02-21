@@ -12,12 +12,12 @@ import sharp from 'sharp';
         
         ///for testing in jasmine return width for new file
         const metadata = await sharp(`assets/thumb/${filename}-resize.jpg`).metadata();
-         console.log(metadata);
+        // console.log(metadata);
         return metadata.width ;
 
     } catch (error) {
       console.log(error);
     
-  };
+  }
 }
   export default ResizImage;
