@@ -1,7 +1,7 @@
 import express from 'express';
 import logger from '../../utilites/logger';
 import path from 'path';
-import { ResizImage, GetMetadata } from './ResizeProcess';
+import { ResizImage } from './ResizeProcess';
 import fs = require('fs');
 
 // set up route
@@ -9,7 +9,7 @@ export const image_disply = express.Router();
 image_disply.get(
   '/',
   logger,
-  (req: express.Request, res: express.Response) => {
+ async (req: express.Request, res: express.Response) => {
     //get URL Parameters
     //http://localhost:3000/api/image-disply?filename=icelandwaterfall&width=200&height=300
     const filename = String(req.query.filename);
@@ -35,7 +35,7 @@ image_disply.get(
 
         } else {
           //call resize function.
-          ResizImage(filename, vWidth, vheight);
+         await ResizImage(filename, vWidth, vheight);
           console.log('image Successfully Resize');
           res.sendFile(imagePath);
         }
