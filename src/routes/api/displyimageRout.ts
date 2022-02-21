@@ -34,6 +34,7 @@ image_disply.get('/', logger, (req: express.Request, res: express.Response) => {
       } else {
         //call resize function.
         ResizImage(filename, width, height);
+        console.log('image Successfully Resize');
         res.sendFile(path.resolve() + `/assets/thumb/${filename}-resize.jpg`);
       }
     } catch (err) {
