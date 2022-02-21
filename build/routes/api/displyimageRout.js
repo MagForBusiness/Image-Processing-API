@@ -69,11 +69,12 @@ exports.image_disply.get('/', logger_1.default, function (req, res) { return __a
                 return [4 /*yield*/, (0, ResizeProcess_1.GetMetadata)(imagePath)];
             case 3:
                 metadata = _a.sent();
-                if (metadata.width === vWidth || metadata.height === vheight)
+                if (metadata.width === vWidth || metadata.height === vheight) {
                     //image exists with the same aspects
                     //display in browser
                     console.log('image already exists');
-                res.sendFile(path_1.default.resolve() + "/assets/thumb/".concat(filename, "-resize.jpg"));
+                    res.sendFile(path_1.default.resolve() + "/assets/thumb/".concat(filename, "-resize.jpg"));
+                }
                 return [3 /*break*/, 5];
             case 4:
                 //call resize function.
