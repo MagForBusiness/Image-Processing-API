@@ -48,7 +48,7 @@ describe('Test endpoint Routers responses', function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get('/api/image-disply')];
+                case 0: return [4 /*yield*/, request.get('/api/image-disply?filename=icelandwaterfall&width=400&height=1000')];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(200);
