@@ -1,5 +1,5 @@
 import express from 'express';
-import { image_disply } from './api/displyimage';
+import { image_disply } from './api/displyimageRout';
 // import rout2 from './api/rout2';
 
 const router = express.Router();
