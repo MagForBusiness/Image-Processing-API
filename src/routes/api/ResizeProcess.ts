@@ -9,11 +9,10 @@ async function ResizImage(filename: string, width: number, height: number) {
         .toFile(`assets/thumb/${filename}-resize.jpg`);
       // const newFilename = `${filename}-resize.jpg`;
       // console.log(`Image Resize ${filename}-resize.jpg`);
-     
+      throw (null);
     } catch (error) {
       console.log(error);
-      throw (error);
-    }
+    
   }
 
   export default ResizImage;

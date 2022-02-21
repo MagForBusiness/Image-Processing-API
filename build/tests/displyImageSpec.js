@@ -7,6 +7,6 @@ var ResizeProcess_1 = __importDefault(require("../routes/api/ResizeProcess"));
 //test Resize Prosses
 describe('Test The Resize Process', function () {
     it('get the name of file = icelandwaterfall after process with Sharp will be icelandwaterfall-resize.jpg  ', function () {
-        expect((0, ResizeProcess_1.default)('', 500, 300)).toThrowError();
+        expect((0, ResizeProcess_1.default)('', 500, 300)).toThrowError('Input file is missing');
     });
 });
