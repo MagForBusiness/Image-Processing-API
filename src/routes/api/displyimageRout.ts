@@ -9,7 +9,7 @@ export const image_disply = express.Router();
 image_disply.get(
   '/',
   logger,
- async (req: express.Request, res: express.Response) => {
+  async (req: express.Request, res: express.Response) => {
     //get URL Parameters
     //http://localhost:3000/api/image-disply?filename=icelandwaterfall&width=200&height=300
     const filename = String(req.query.filename);
@@ -26,16 +26,16 @@ image_disply.get(
       );
     } else {
       //test if image already exists-Cash Check
-      const imagePath = path.resolve() + `/assets/thumb/${filename}${vWidth}${vheight}-resize.jpg`;
+      const imagePath =
+        path.resolve() +
+        `/assets/thumb/${filename}${vWidth}${vheight}-resize.jpg`;
 
       try {
         if (fs.existsSync(imagePath)) {
-          
           res.sendFile(imagePath);
-
         } else {
           //call resize function.
-         await ResizImage(filename, vWidth, vheight);
+          await ResizImage(filename, vWidth, vheight);
           console.log('image Successfully Resize');
           res.sendFile(imagePath);
         }

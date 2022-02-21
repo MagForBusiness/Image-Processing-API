@@ -11,14 +11,21 @@ export async function ResizImage(
       .toFile(`assets/thumb/${filename}${vwidth}${vheight}-resize.jpg`);
 
     ///for testing in jasmine return width for new file
-    const NewImageWideth = (await GetMetadata(`${filename}`,vwidth,vheight)).width;
+    const NewImageWideth = (await GetMetadata(`${filename}`, vwidth, vheight))
+      .width;
     // console.log(metadata);
     return NewImageWideth;
   } catch (error) {
     console.log(error);
   }
 }
-export  function GetMetadata(imageName: string,iwidth:number ,iheight:number) {
-  const metadata =  sharp(`assets/thumb/${imageName}${iwidth}${iheight}-resize.jpg`).metadata();
+export function GetMetadata(
+  imageName: string,
+  iwidth: number,
+  iheight: number
+) {
+  const metadata = sharp(
+    `assets/thumb/${imageName}${iwidth}${iheight}-resize.jpg`
+  ).metadata();
   return metadata;
 }
