@@ -1,9 +1,10 @@
 import express from 'express';
 import logger from '../../utilites/logger';
 import path from 'path';
-import {ResizImage,GetMetadata} from './ResizeProcess';
+import {ResizImage} from './ResizeProcess';
 import fs = require('fs');
-import image-size from 'image-size';
+
+
 
 
 // set up route
@@ -31,7 +32,7 @@ image_disply.get('/', logger, (req: express.Request, res: express.Response) => {
       if  ( fs.existsSync(imagePath) ) {
         //get image metadata (width and height)
 
-        const imageMetadata= (await GetMetadata(`${imagePath}`)).width;
+        const sizeOf = require('image-size');
         // if (imageMetadata.)
         //image exists
         //display in browser
