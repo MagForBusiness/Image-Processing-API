@@ -1,6 +1,6 @@
 import sharp from 'sharp';
 
-async function ResizImage(filename: string, width: number, height: number) {
+export async function ResizImage(filename: string, width: number, height: number) {
   try {
     await sharp(`assets/full/${filename}.jpg`)
       .resize(width, height)
@@ -14,9 +14,9 @@ async function ResizImage(filename: string, width: number, height: number) {
     console.log(error);
   }
 }
-async function GetMetadata(imageName: string) {
- const metadata = await sharp(`assets/thumb/${imageName}-resize.jpg`).metadata();
+export  function GetMetadata(imageName: string) {
+ const metadata =  sharp(`assets/thumb/${imageName}-resize.jpg`).metadata();
  return metadata;
 }
 
-export default ResizImage;
+

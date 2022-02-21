@@ -1,7 +1,7 @@
 import express from 'express';
 import logger from '../../utilites/logger';
 import path from 'path';
-import ResizImage from './ResizeProcess';
+import {ResizImage,GetMetadata} from './ResizeProcess';
 import fs = require('fs');
 
 // set up route
@@ -24,9 +24,12 @@ image_disply.get('/', logger, (req: express.Request, res: express.Response) => {
   } else {
     //test if image already exists-Cash Check
     const imagePath = path.resolve() + `/assets/thumb/${filename}-resize.jpg`;
-    
-    try {
-      if (fs.existsSync(imagePath)) {
+  
+   try {
+      if  ( fs.existsSync(imagePath)) {
+        //get image metadata (width and height)
+        // const imageMetadata= (GetMetadata(`${filename}`)).width;
+        console.log((GetMetadata(`${filename}`)));
         //image exists
         //display in browser
         console.log('image already exists');
