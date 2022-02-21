@@ -1,9 +1,12 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-var displyimage_1 = require("../routes/api/displyimage");
+var ResizeProcess_1 = __importDefault(require("../routes/api/ResizeProcess"));
 //test Resize Prosses
 describe('Test The Resize Process', function () {
     it('get the name of file = icelandwaterfall after process with Sharp will be icelandwaterfall-resize.jpg  ', function () {
-        expect((0, displyimage_1.ResizImage)('icelandwaterfall', 500, 300)).toBe('icelandwaterfall-resize.jpg');
+        expect((0, ResizeProcess_1.default)('', 500, 300)).toThrow();
     });
 });
