@@ -35,41 +35,34 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetMetadata = exports.ResizImage = void 0;
-var sharp_1 = __importDefault(require("sharp"));
-function ResizImage(filename, vwidth, vheight) {
-    return __awaiter(this, void 0, void 0, function () {
-        var NewImageWideth, error_1;
+var ResizeProcess_1 = require("../routes/api/ResizeProcess");
+//test Resize Prosses
+describe('Test The Resize Process', function () {
+    it('get the width of file = icelandwaterfall after process with Sharp will be 500 ', function () { return __awaiter(void 0, void 0, void 0, function () {
+        var result;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0:
-                    _a.trys.push([0, 3, , 4]);
-                    return [4 /*yield*/, (0, sharp_1.default)("assets/full/".concat(filename, ".jpg"))
-                            .resize(vwidth, vheight)
-                            .toFile("assets/thumb/".concat(filename).concat(vwidth).concat(vheight, "-resize.jpg"))];
+                case 0: return [4 /*yield*/, (0, ResizeProcess_1.ResizImage)('icelandwaterfall', 500, 300)];
                 case 1:
-                    _a.sent();
-                    return [4 /*yield*/, GetMetadata("".concat(filename), vwidth, vheight)];
-                case 2:
-                    NewImageWideth = (_a.sent()).width;
-                    // console.log(metadata);
-                    return [2 /*return*/, NewImageWideth];
-                case 3:
-                    error_1 = _a.sent();
-                    console.log(error_1);
-                    return [3 /*break*/, 4];
-                case 4: return [2 /*return*/];
+                    result = _a.sent();
+                    expect(result).toBe(500);
+                    return [2 /*return*/];
             }
         });
-    });
-}
-exports.ResizImage = ResizImage;
-function GetMetadata(imageName, iwidth, iheight) {
-    var metadata = (0, sharp_1.default)("assets/thumb/".concat(imageName).concat(iwidth).concat(iheight, "-resize.jpg")).metadata();
-    return metadata;
-}
-exports.GetMetadata = GetMetadata;
+    }); });
+    it('get the width of file = icelandwaterfall will be 500 ', function () { return __awaiter(void 0, void 0, void 0, function () {
+        var result, _a;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    result = (0, ResizeProcess_1.GetMetadata)('icelandwaterfall', 500, 300);
+                    _a = expect;
+                    return [4 /*yield*/, result];
+                case 1:
+                    _a.apply(void 0, [(_b.sent()).width]).toBe(500);
+                    return [2 /*return*/];
+            }
+        });
+    }); });
+});
