@@ -42,7 +42,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var sharp_1 = __importDefault(require("sharp"));
 function ResizImage(filename, width, height) {
     return __awaiter(this, void 0, void 0, function () {
-        var metadata, error_1;
+        var NewImageWideth, error_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -52,16 +52,29 @@ function ResizImage(filename, width, height) {
                             .toFile("assets/thumb/".concat(filename, "-resize.jpg"))];
                 case 1:
                     _a.sent();
-                    return [4 /*yield*/, (0, sharp_1.default)("assets/thumb/".concat(filename, "-resize.jpg")).metadata()];
+                    return [4 /*yield*/, GetMetadata("".concat(filename))];
                 case 2:
-                    metadata = _a.sent();
+                    NewImageWideth = (_a.sent()).width;
                     // console.log(metadata);
-                    return [2 /*return*/, metadata.width];
+                    return [2 /*return*/, NewImageWideth];
                 case 3:
                     error_1 = _a.sent();
                     console.log(error_1);
                     return [3 /*break*/, 4];
                 case 4: return [2 /*return*/];
+            }
+        });
+    });
+}
+function GetMetadata(imageName) {
+    return __awaiter(this, void 0, void 0, function () {
+        var metadata;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, (0, sharp_1.default)("assets/thumb/".concat(imageName, "-resize.jpg")).metadata()];
+                case 1:
+                    metadata = _a.sent();
+                    return [2 /*return*/, metadata];
             }
         });
     });

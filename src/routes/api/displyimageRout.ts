@@ -24,7 +24,7 @@ image_disply.get('/', logger, (req: express.Request, res: express.Response) => {
   } else {
     //test if image already exists-Cash Check
     const imagePath = path.resolve() + `/assets/thumb/${filename}-resize.jpg`;
-
+    
     try {
       if (fs.existsSync(imagePath)) {
         //image exists

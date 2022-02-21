@@ -36,6 +36,7 @@ exports.image_disply.get('/', logger_1.default, function (req, res) {
             else {
                 //call resize function.
                 (0, ResizeProcess_1.default)(filename, width, height);
+                console.log('image Successfully Resize');
                 res.sendFile(path_1.default.resolve() + "/assets/thumb/".concat(filename, "-resize.jpg"));
             }
         }
