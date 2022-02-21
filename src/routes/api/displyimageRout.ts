@@ -3,6 +3,8 @@ import logger from '../../utilites/logger';
 import path from 'path';
 import {ResizImage,GetMetadata} from './ResizeProcess';
 import fs = require('fs');
+import image-size from 'image-size';
+
 
 // set up route
 export const image_disply = express.Router();
@@ -10,12 +12,12 @@ image_disply.get('/', logger, (req: express.Request, res: express.Response) => {
   //get URL Parameters
   //http://localhost:3000/api/image-disply?filename=icelandwaterfall&width=200&height=300
   const filename = String(req.query.filename);
-  const width = Number(req.query.width);
-  const height = Number(req.query.height);
+  const vWidth = Number(req.query.width);
+  const vheight = Number(req.query.height);
   //Simple Check  User Input
   if (
-    isNaN(width) ||
-    isNaN(height) ||
+    isNaN(vWidth) ||
+    isNaN(vheight) ||
     (filename == null && filename == undefined)
   ) {
     res.send(
@@ -24,19 +26,20 @@ image_disply.get('/', logger, (req: express.Request, res: express.Response) => {
   } else {
     //test if image already exists-Cash Check
     const imagePath = path.resolve() + `/assets/thumb/${filename}-resize.jpg`;
-  
+    
    try {
-      if  ( fs.existsSync(imagePath)) {
+      if  ( fs.existsSync(imagePath) ) {
         //get image metadata (width and height)
-        // const imageMetadata= (GetMetadata(`${filename}`)).width;
-        console.log((GetMetadata(`${filename}`)));
+
+        const imageMetadata= (await GetMetadata(`${imagePath}`)).width;
+        // if (imageMetadata.)
         //image exists
         //display in browser
         console.log('image already exists');
         res.sendFile(path.resolve() + `/assets/thumb/${filename}-resize.jpg`);
       } else {
         //call resize function.
-        ResizImage(filename, width, height);
+        ResizImage(filename, vWidth, vheight);
         console.log('image Successfully Resize');
         res.sendFile(path.resolve() + `/assets/thumb/${filename}-resize.jpg`);
       }

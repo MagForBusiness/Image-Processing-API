@@ -7,7 +7,8 @@ exports.image_disply = void 0;
 var express_1 = __importDefault(require("express"));
 var logger_1 = __importDefault(require("../../utilites/logger"));
 var path_1 = __importDefault(require("path"));
-var ResizeProcess_1 = require("./ResizeProcess");
+// import {ResizImage,GetMetadata} from './ResizeProcess';
+var ResizeProcess_1 = __importDefault(require("./ResizeProcess"));
 var fs = require("fs");
 // set up route
 exports.image_disply = express_1.default.Router();
@@ -30,7 +31,7 @@ exports.image_disply.get('/', logger_1.default, function (req, res) {
             if (fs.existsSync(imagePath)) {
                 //get image metadata (width and height)
                 // const imageMetadata= (GetMetadata(`${filename}`)).width;
-                console.log(((0, ResizeProcess_1.GetMetadata)("".concat(filename))));
+                // console.log((GetMetadata(`${filename}`)));
                 //image exists
                 //display in browser
                 console.log('image already exists');
@@ -38,7 +39,7 @@ exports.image_disply.get('/', logger_1.default, function (req, res) {
             }
             else {
                 //call resize function.
-                (0, ResizeProcess_1.ResizImage)(filename, width, height);
+                (0, ResizeProcess_1.default)(filename, width, height);
                 console.log('image Successfully Resize');
                 res.sendFile(path_1.default.resolve() + "/assets/thumb/".concat(filename, "-resize.jpg"));
             }

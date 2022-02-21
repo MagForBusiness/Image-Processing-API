@@ -39,7 +39,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetMetadata = exports.ResizImage = void 0;
 var sharp_1 = __importDefault(require("sharp"));
 function ResizImage(filename, width, height) {
     return __awaiter(this, void 0, void 0, function () {
@@ -67,9 +66,8 @@ function ResizImage(filename, width, height) {
         });
     });
 }
-exports.ResizImage = ResizImage;
 function GetMetadata(imageName) {
     var metadata = (0, sharp_1.default)("assets/thumb/".concat(imageName, "-resize.jpg")).metadata();
     return metadata;
 }
-exports.GetMetadata = GetMetadata;
+exports.default = ResizImage;

@@ -14,8 +14,8 @@ export async function ResizImage(filename: string, width: number, height: number
     console.log(error);
   }
 }
-export  function GetMetadata(imageName: string) {
- const metadata =  sharp(`assets/thumb/${imageName}-resize.jpg`).metadata();
+export async function GetMetadata(imageName: string) {
+ const metadata =  await sharp(`assets/thumb/${imageName}-resize.jpg`).metadata();
  return metadata;
 }
 
