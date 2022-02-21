@@ -2,12 +2,12 @@ import sharp from 'sharp';
 
 export async function ResizImage(
   filename: string,
-  width: number,
-  height: number
+  vwidth: number,
+  vheight: number
 ) {
   try {
     await sharp(`assets/full/${filename}.jpg`)
-      .resize(width, height)
+      .resize(vwidth, vheight)
       .toFile(`assets/thumb/${filename}-resize.jpg`);
 
     ///for testing in jasmine return width for new file

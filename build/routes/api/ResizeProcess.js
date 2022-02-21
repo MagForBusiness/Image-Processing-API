@@ -41,7 +41,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GetMetadata = exports.ResizImage = void 0;
 var sharp_1 = __importDefault(require("sharp"));
-function ResizImage(filename, width, height) {
+function ResizImage(filename, vwidth, vheight) {
     return __awaiter(this, void 0, void 0, function () {
         var NewImageWideth, error_1;
         return __generator(this, function (_a) {
@@ -49,7 +49,7 @@ function ResizImage(filename, width, height) {
                 case 0:
                     _a.trys.push([0, 3, , 4]);
                     return [4 /*yield*/, (0, sharp_1.default)("assets/full/".concat(filename, ".jpg"))
-                            .resize(width, height)
+                            .resize(vwidth, vheight)
                             .toFile("assets/thumb/".concat(filename, "-resize.jpg"))];
                 case 1:
                     _a.sent();
