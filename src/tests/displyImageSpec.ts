@@ -1,4 +1,4 @@
-import {ResizImage} from '../routes/api/ResizeProcess';
+import { ResizImage } from '../routes/api/ResizeProcess';
 
 //test Resize Prosses
 
