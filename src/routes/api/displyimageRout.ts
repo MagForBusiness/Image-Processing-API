@@ -9,7 +9,7 @@ export const image_disply = express.Router();
 image_disply.get(
   '/',
   logger,
-  async (req: express.Request, res: express.Response) => {
+  (req: express.Request, res: express.Response) => {
     //get URL Parameters
     //http://localhost:3000/api/image-disply?filename=icelandwaterfall&width=200&height=300
     const filename = String(req.query.filename);
@@ -26,28 +26,18 @@ image_disply.get(
       );
     } else {
       //test if image already exists-Cash Check
-      const imagePath = path.resolve() + `/assets/thumb/${filename}-resize.jpg`;
+      const imagePath = path.resolve() + `/assets/thumb/${filename}${vWidth}${vheight}-resize.jpg`;
 
       try {
         if (fs.existsSync(imagePath)) {
-          //get image metadata (width and height)
-          const metadata = await GetMetadata(imagePath);
-          console.log(metadata);
-          res.sendFile(path.resolve() + `/assets/thumb/${filename}-resize.jpg`);
+          
+          res.sendFile(imagePath);
 
-          // if (metadata.width === vWidth || metadata.height === vheight) {
-          //   //image exists with the same aspects
-          //   //display in browser
-          //   console.log('image already exists');
-          //   res.sendFile(
-          //     path.resolve() + `/assets/thumb/${filename}-resize.jpg`
-          //   );
-          // }
         } else {
           //call resize function.
-          await ResizImage(filename, vWidth, vheight);
+          ResizImage(filename, vWidth, vheight);
           console.log('image Successfully Resize');
-          res.sendFile(path.resolve() + `/assets/thumb/${filename}-resize.jpg`);
+          res.sendFile(imagePath);
         }
       } catch (err) {
         console.error(err);

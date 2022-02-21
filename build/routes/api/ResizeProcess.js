@@ -69,7 +69,16 @@ function ResizImage(filename, vwidth, vheight) {
 }
 exports.ResizImage = ResizImage;
 function GetMetadata(imageName) {
-    var metadata = (0, sharp_1.default)("assets/thumb/".concat(imageName, "-resize.jpg")).metadata();
-    return metadata;
+    return __awaiter(this, void 0, void 0, function () {
+        var metadata;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, (0, sharp_1.default)("assets/thumb/".concat(imageName, "-resize.jpg")).metadata()];
+                case 1:
+                    metadata = _a.sent();
+                    return [2 /*return*/, metadata];
+            }
+        });
+    });
 }
 exports.GetMetadata = GetMetadata;
