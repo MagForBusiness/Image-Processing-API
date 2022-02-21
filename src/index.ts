@@ -7,7 +7,7 @@ const app = express();
 
 //Set a port
 
-const port: number= 3000;
+const port: number = 3000;
 //Add an API endpoint to get a route, then send a response to the browser
 app.use('/api', router);
 
