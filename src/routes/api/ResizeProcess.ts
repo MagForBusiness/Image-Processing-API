@@ -1,5 +1,5 @@
 import sharp from 'sharp';
-import { runInThisContext } from 'vm';
+
  
  
  
@@ -14,6 +14,7 @@ import { runInThisContext } from 'vm';
         const metadata = await sharp(`assets/thumb/${filename}-resize.jpg`).metadata();
          console.log(metadata);
         return metadata.width ;
+
     } catch (error) {
       console.log(error);
     

@@ -6,7 +6,7 @@ export const image_disply = express.Router();
 
 
 // set up route
-image_disply.get('/', logger, (req, res) => {
+image_disply.get('/', logger, (req: express.Request, res:express.Response) =>  {
   //get URL Parameters
   //http://localhost:3000/api/image-disply?filename=icelandwaterfall&width=200&height=300
   const filename = String(req.query.filename);

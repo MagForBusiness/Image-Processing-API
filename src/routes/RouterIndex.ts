@@ -6,7 +6,7 @@ const router = express.Router();
 router.use('/image-disply', image_disply);
 // router.use('/rout2', rout2);
 
-router.get('/', (req, res) => {
+router.get('/', (req :express.Request, res :express.Response) => {
   res.send('router Connect!');
 });
 export default router;
